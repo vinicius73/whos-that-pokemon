@@ -1,0 +1,32 @@
+@charset "utf-8";
+@import "../../node_modules/bulma/bulma.sass";
+
+html, body {
+  background-color: #e6cd94;
+  height: 100%;
+}
+
+.container {
+  max-width: 960px;
+}
+
+.box {
+  transition: all 0.5s;
+  border-radius: 25px 0 25px 0;
+}
+
+.pokemon-image {
+  filter: invert(50%);
+  &.visible {
+    filter: invert(0%);
+  }
+}
+
+h1.title {
+  color: #ff4141;
+}
+
+.footer {
+  background-color: rgba(255, 255, 255, 0.30);
+  border-radius: 0 25px 0 25px;
+}
