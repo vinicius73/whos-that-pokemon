@@ -1,4 +1,7 @@
-export default {
+import Vue from 'vue'
+
+export default Vue.extend({
+  name: 'Footer',
   render (h) {
     return (
       <footer class="footer">
@@ -13,4 +16,4 @@ export default {
       </footer>
     )
   }
-}
+})
