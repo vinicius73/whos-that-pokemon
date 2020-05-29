@@ -30,3 +30,15 @@ h1.title {
   background-color: rgba(255, 255, 255, 0.30);
   border-radius: 0 25px 0 25px;
 }
+
+.buttons {
+  &:last-child{
+    margin-bottom: 0;
+  }
+  .button {
+    font-size: 1.2em;
+    @media screen and (max-width: 769px) {
+      font-size: 1.8em;
+    }
+  }
+}

@@ -72,7 +72,7 @@ export default Vue.extend({
                   <button
                     on-click={() => this.setValue(id)}
                     disabled={this.hasResult}
-                    class="button is-medium is-dark">{id}</button>
+                    class="button is-dark">{id}</button>
                 ))}
               </div>
               {(this.hasResult && <p class="is-size-4">
