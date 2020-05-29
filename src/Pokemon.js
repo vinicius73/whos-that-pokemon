@@ -2,6 +2,7 @@ import Vue from 'vue'
 import { sampleSize, map, shuffle } from 'lodash-es'
 import list from './assets/pokemons.json'
 import Image from './Image'
+import ScoreCounter from './ScoreCounter'
 
 export default Vue.extend({
   name: 'Pokemon',
@@ -10,7 +11,8 @@ export default Vue.extend({
     visible: Boolean
   },
   data: () => ({
-    result: null
+    result: null,
+    score: 0
   }),
   computed: {
     options () {
@@ -43,10 +45,12 @@ export default Vue.extend({
     onSuccess () {
       this.$emit('success')
       this.result = true
+      this.score++
     },
     onError () {
       this.$emit('error')
       this.result = false
+      this.score = 0
     }
   },
   watch: {
@@ -59,11 +63,17 @@ export default Vue.extend({
       <div class={`box ${this.cardClass}`}>
         <article class="media">
           <div class="media-left">
+            <ScoreCounter class="is-hidden-touch" score={this.score} />
             <figure class="image is-128x128">
               <Image
                 visible={this.visible}
                 pokemon={this.pokemon} />
             </figure>
+            <ScoreCounter class="is-hidden-desktop" score={this.score} />
+            {(this.hasResult && <p class="is-size-4 is-hidden-desktop">
+              <hr />
+              <strong>{this.pokemon}</strong>
+            </p>)}
           </div>
           <div class="media-content">
             <div class="content">
@@ -75,7 +85,7 @@ export default Vue.extend({
                     class="button is-dark">{id}</button>
                 ))}
               </div>
-              {(this.hasResult && <p class="is-size-4">
+              {(this.hasResult && <p class="is-size-4 is-hidden-touch">
                 This is <strong>{this.pokemon}</strong>
               </p>)}
             </div>
