@@ -15,7 +15,9 @@ module.exports = {
     format: 'esm'
   },
   plugins: [
-    scss(),
+    scss({
+      outputStyle: isProduction ? 'compressed' : 'expanded'
+    }),
     json(),
     babel(),
     commonjs(),
