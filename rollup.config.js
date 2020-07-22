@@ -19,7 +19,9 @@ module.exports = {
       outputStyle: isProduction ? 'compressed' : 'expanded'
     }),
     json(),
-    babel(),
+    babel({
+      babelHelpers: 'bundled'
+    }),
     commonjs(),
     vue(),
     pikaResolver({
