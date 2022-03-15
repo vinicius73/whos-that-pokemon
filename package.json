@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "bulma": "^0.9.0",
-    "lodash-es": "^4.17.15",
+    "lodash-es": "^4.17.21",
     "vue": "^2.6.11"
   },
   "version": "1.22.5"
